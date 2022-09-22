@@ -15,6 +15,12 @@
       color: black;
       text-decoration:none;
     }
+
+    img{
+
+      border-radius: 60%;
+      width: 120px;
+    }
   </style>
 </head>
 <body>
@@ -22,7 +28,7 @@
     <div class="container">
       <p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>
       <figure  class= "figure" >
-        <img  src="logo.png" width="100" height="auto" class="figure-img img-fluid rounded">
+        <img class="rounded-circle" src="https://www.kindpng.com/picc/m/219-2195660_software-mobile-applications-web-development-web-development-icon.png" width="100" height="auto" alt="logo">
       </figure>
       <!--  <button type="button" class="btn btn-danger" style="float:right"><a th:href="@{/logout}">Cerrar Sesión</a></button> -->
         <h1> Agregue aqui los datos del Empleado</h1>

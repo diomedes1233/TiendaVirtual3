@@ -22,8 +22,7 @@ public class EmpresaController {
 
 
     //EMPRESAS
-
-    @GetMapping ({"/","/VerEmpresas"}) // cambie el interprises por VerEmpresa para relacionar mejor con el Html
+    @GetMapping ({"/","/VerEmpresas"})
     public String viewEmpresas(Model model, @ModelAttribute("mensaje") String mensaje){
         List<Empresa> listaEmpresas=empresaService.getAllEmpresas();
         model.addAttribute("emplist",listaEmpresas);
@@ -58,6 +57,7 @@ public class EmpresaController {
         return "editarEmpresa";
     }
 
+
     @PostMapping("/ActualizarEmpresa")
     public String updateEmpresa(@ModelAttribute("emp") Empresa emp, RedirectAttributes redirectAttributes){
         if(empresaService.saveOrUpdateEmpresa(emp)){
@@ -78,8 +78,5 @@ public class EmpresaController {
         redirectAttributes.addFlashAttribute("mensaje", "deleteError");
         return "redirect:/VerEmpresas";
     }
-
-
-
 
 }
