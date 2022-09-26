@@ -9,6 +9,7 @@ public class Empleado {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     private String nombre;
+    @Column
     private String correo;
     @ManyToOne
     @JoinColumn(name = "empresa_id")

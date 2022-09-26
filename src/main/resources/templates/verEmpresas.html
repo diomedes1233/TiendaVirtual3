@@ -9,31 +9,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <style>
-        a{
-            color:white;
-        }
-        a:hover {
-            color: black;
-            text-decoration:none;
-        }
+    <!--<link rel="stylesheet" th:href="@{/css/style.css}">-->
+    <link rel="stylesheet" href="/css/style.css">
 
-        img{
-            border-radius: 60%;
-            width: 120px;
-        }
-    </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="containerMain">
 
-            <p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>
-        <figure  class= "figure" >
-            <img class="rounded-circle" src="https://www.kindpng.com/picc/m/219-2195660_software-mobile-applications-web-development-web-development-icon.png" width="100" height="auto">
-        </figure>
+        <nav>
+            <div class="container" >
+                <div class="imgLogo" >
+                    <img src="https://www.kindpng.com/picc/m/219-2195660_software-mobile-applications-web-development-web-development-icon.png" width="100" height="auto">
+                </div>
 
-            <h1>Ver total empresas de la BD</h1>
+                <div class="titleContainer">
+                    <a href="#">Tienda Virtual</a>
+                </div>
+
+                <ul class="nav">
+                    <li class="active"><a th:href="@{/VerEmpresas}">Empresas</a></li>
+                    <li><a th:href="@{/VerMovimientos}">Movimientos</a></li>
+                    <li><a th:href="@{/VerEmpleados}">Empleados</a></li>
+                </ul>
+
+            </div>
+        </nav>
+            <div class="email-cerrar">
+            <p th:inline="text" class="nameEmail">User: [[${#httpServletRequest.remoteUser}]]</p>
+            <button type="button" class="btn-azul-claro-cerrar-secion"><a th:href="@{/logout}">Cerrar Sesión</a></button>
+            </div>
+            <h1 class="sudTitle">Ver empresas</h1>
 
             <!--Dibujamos la tabla-->
             <br>
@@ -59,25 +65,24 @@
                     <td th:text="${empresa.direccion}"></td>
                     <td th:text="${empresa.telefono}"></td>
                     <td th:text="${empresa.NIT}"></td>
-                    <td><button type="button" class="btn btn-info"><a th:href="@{/Empresa/{id}/Empleados (id=${empresa.id})}">Ver</a></button></td>
-                    <td><button type="button" class="btn btn-primary"><a th:href="@{/Empresa/{id}/Movimientos (id=${empresa.id})}">Ver</a></button></td>
-                    <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpresa/{id}(id=${empresa.id})}">Editar</a></button></td>
-                    <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpresa/{id}(id=${empresa.id})}">Eliminar</a></button></td>
+                    <td><button type="button" class="btn-azul-oscuro-empleado"><a th:href="@{/Empresa/{id}/Empleados (id=${empresa.id})}">Ver</a></button></td>
+                    <td><button type="button" class="btn-azul-oscuro-movimiento"><a th:href="@{/Empresa/{id}/Movimientos (id=${empresa.id})}">Ver</a></button></td>
+                    <td><button type="button" class="btn-naranja-editar"><a th:href="@{/EditarEmpresa/{id}(id=${empresa.id})}">Editar</a></button></td>
+                    <td><button type="button" class="btn-rojo-eliminar"><a th:href="@{/EliminarEmpresa/{id}(id=${empresa.id})}">Eliminar</a></button></td>
                 </tr>
             </table>
 
                     <!-- vamos a crear un boton que sirva para agregar nuevas empresas -->
-                    <button type="button" class="btn btn-primary"><a th:href="@{/AgregarEmpresa}">Agregar Nueva Empresa </a></button>
-                    <br><br>
-                    <button type="button" class="btn btn-primary"><a th:href="@{/AgregarEmpleado}">Agregar Nuevo Empleado</a></button>
-                    <br><br>
-                    <button type="button" class="btn btn-primary"><a th:href="@{/VerEmpleados}">Ver lista de Empleados</a></button>
-                    <br><br>
-                    <br><br>
-                    <a href="javascript: history.go(-1)" class="btn btn-info" role="button">Atrás</a>
-                    <button type="button" class="btn btn-primary .btn-sm"  style="float:right"><a th:href="@{/logout}">Cerrar Sesión</a></button>
+                    <div class="btn-agregar-empresa-empleado">
+                    <button type="button" class="btn-azul-oscuro"><a th:href="@{/AgregarEmpresa}">Agregar Nueva Empresa </a></button>
+                    <button type="button" class="btn-azul-oscuro"><a th:href="@{/AgregarEmpleado}">Agregar Nuevo Empleado</a></button>
+                        <a href="javascript: history.go(-1)" class="btn-azul-claro-atras" role="button">Atrás</a>
+                    </div>
+
 
     </div>
+
+    <footer>Autores: Paula Andrea, Gonzalo, Edwin Bernal</footer>
 
 <script th:inline="javascript">
     window.onload=function(){

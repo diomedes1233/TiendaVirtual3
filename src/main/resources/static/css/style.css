@@ -1,0 +1,240 @@
+
+.container{
+    width: 100%;
+    height: 150px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.imgLogo img{
+    margin-left: 10%;
+    border-radius: 60%;
+    width: 120px;
+
+}
+
+.imgLogo img:hover{
+    transform: scale(1.2);
+
+}
+
+.titleContainer a{
+    width: 100%;
+    display: flex;
+    margin-left: 80px;
+    font-size: 50px;
+    color: #fff;
+
+
+}
+
+.titleContainer a:hover{
+    color: #02e5fa;
+    text-decoration:none;
+    transform: scale(1.2);
+
+
+
+}
+
+.nav{
+    display: flex;
+    margin-left: 17%;
+
+}
+
+.nav li a{
+    color: #fff;
+    font-size: 17px;
+    border-radius: 10px;
+
+
+}
+
+.nav li a:hover{
+    color: #fff;
+    text-decoration:none;
+    background-color: #02e5fa;
+
+}
+
+.email-cerrar{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px;
+
+}
+
+
+.sudTitle{
+  display: flex;
+    justify-content: center;
+    color: blue;
+
+}
+
+.sudTitle:hover{
+    color: #02e5fa;
+    text-decoration:none;
+    transform: scale(1.2);
+}
+
+.btn-azul-oscuro-empleado{
+    background: #02e5fa;
+    border-radius: 5px;
+    padding: 8px 15px;
+    border: none;
+    color: #ffffff;
+}
+
+.btn-azul-oscuro-empleado a{
+    color: #fff;
+    text-decoration:none;
+}
+
+.btn-azul-oscuro-empleado:hover{
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.btn-azul-oscuro-movimiento{
+    background: #0e089d;
+    border-radius: 5px;
+    padding: 8px 15px;
+    border: none;
+    color: #ffffff;
+
+}
+
+.btn-azul-oscuro-movimiento a{
+    color: #fff;
+    text-decoration:none;
+}
+
+.btn-azul-oscuro-movimiento:hover{
+    color: #fff;
+    transform: scale(1.2);
+}
+
+
+.btn-agregar-empresa-empleado{
+    display: flex;
+    padding: 15px 15px;
+    gap: 30px;
+    align-items: center;
+    margin: 50px 12px;
+
+}
+
+.btn-agregar-empresa-empleado .btn-azul-oscuro{
+    background: #0e089d;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+
+}
+
+.btn-agregar-empresa-empleado .btn-azul-oscuro a{
+    color: #fff;
+    text-decoration:none;
+}
+
+.btn-agregar-empresa-empleado .btn-azul-oscuro:hover{
+    color: #fff;
+    text-decoration:none;
+    transform: scale(1.2);
+}
+
+
+.btn-naranja-editar{
+    background: #f3800b;
+    border-radius: 5px;
+    padding: 8px 15px;
+    border: none;
+}
+
+.btn-naranja-editar a{
+    color: #fff;
+    text-decoration:none;
+}
+
+.btn-naranja-editar:hover{
+    color: #fff;
+    text-decoration:none;
+    transform: scale(1.2);
+}
+
+.btn-rojo-eliminar{
+    background: red;
+    border-radius: 5px;
+    padding: 8px 15px;
+    border: none;
+}
+
+.btn-rojo-eliminar a{
+    color: #fff;
+    text-decoration:none;
+}
+
+.btn-rojo-eliminar:hover{
+    color: #fff;
+    text-decoration:none;
+    transform: scale(1.2);
+}
+
+.btn-azul-claro-atras{
+    background: #02e5fa;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    margin-left: 40%;
+}
+
+.btn-azul-claro-atras:hover{
+    color: #fff;
+    text-decoration:none;
+    transform: scale(1.2);
+
+}
+
+.email-cerrar .btn-azul-claro-cerrar-secion{
+    background: #02e5fa;
+    margin-right: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+}
+
+
+.email-cerrar .btn-azul-claro-cerrar-secion a{
+    color: #fff;
+    font-size: 18px;
+    text-decoration:none;
+}
+
+.email-cerrar .btn-azul-claro-cerrar-secion:hover{
+    color: #02e5fa;
+    text-decoration:none;
+    transform: scale(1.2);
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background: blue;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+
+
