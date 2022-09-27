@@ -7,34 +7,38 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    a{
-      color:white;
-    }
-    a:hover {
-      color: black;
-      text-decoration:none;
-    }
+  <link rel="stylesheet" href="/css/style.css">
 
-    img{
-
-      border-radius: 60%;
-      width: 120px;
-    }
-  </style>
 </head>
 <body>
 
-    <div class="container">
-      <p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>
-      <figure  class= "figure" >
-        <img class="rounded-circle" src="https://www.kindpng.com/picc/m/219-2195660_software-mobile-applications-web-development-web-development-icon.png" width="100" height="auto" alt="logo">
-      </figure>
-      <!--  <button type="button" class="btn btn-danger" style="float:right"><a th:href="@{/logout}">Cerrar Sesión</a></button> -->
-        <h1> Agregue aqui los datos del Empleado</h1>
-        <br>
+    <div class="containerMain">
+      <nav>
+        <div class="container" >
+          <div class="imgLogo" >
+            <img src="https://www.kindpng.com/picc/m/219-2195660_software-mobile-applications-web-development-web-development-icon.png" width="100" height="auto">
+          </div>
+
+          <div class="titleContainer">
+            <a href="#">Tienda Virtual</a>
+          </div>
+
+          <ul class="nav">
+            <li class="active"><a th:href="@{/VerEmpresas}">Empresas</a></li>
+            <li><a th:href="@{/VerMovimientos}">Movimientos</a></li>
+            <li><a th:href="@{/VerEmpleados}">Empleados</a></li>
+          </ul>
+
+        </div>
+      </nav>
+      <div class="email-cerrar">
+        <p th:inline="text" class="nameEmail">User: [[${#httpServletRequest.remoteUser}]]</p>
+        <button type="button" class="btn-azul-claro-cerrar-secion"><a th:href="@{/logout}">Cerrar Sesión</a></button>
+      </div>
+      <h1 class="sudTitle">Agregue aqui los datos del Empleado</h1>
+
         <!--Crear formulario para llenar los datos de la empresa y guardarlo en el objeto emp -->
-        <form th:action="@{/GuardarEmpleado}" th:object="${empl}" method="post">
+        <form class="container-form" th:action="@{/GuardarEmpleado}" th:object="${empl}" method="post">
           <!--Campo para nombre-->
           <div class="row">
             <div class="form-group col-md-12">
@@ -99,21 +103,14 @@
               </div>
             </div>
           </div>
-
-
-          <!--Boton para enviar todo y ejecutar accion -->
-          <div class="row">
-            <div class="col-md-2">
-              <button class="btn btn-success">Registrar empleado</button>
-            </div>
-          </div>
-
         </form>
 
-        <br>
-        <a href="javascript: history.go(-1)" class="btn btn-info" role="button">Atrás</a>
-        <button type="button" class="btn btn-primary .btn-sm"  style="float:right"><a th:href="@{/logout}">Cerrar Sesión</a></button>
-
+          <!--Boton para enviar todo y ejecutar accion -->
+          <div class="container-btn-registrar-atras">
+              <button class="btn-registrar-verde">Registrar empleado</button>
+              <a href="javascript: history.go(-1)" class="btn-claro-atras" role="button">Atrás</a>
+          </div>
     </div>
+    <footer>Autores: Paula Andrea, Gonzalo, Carlolos, Santiago, Edwin Bernal</footer>
 </body>
 </html>

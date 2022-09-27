@@ -26,14 +26,6 @@ public class EmpleadoController {
     @Autowired
     EmpresaService empresaService;
 
-    //EMPLEADOS
-    @GetMapping ("/VerEmpleados")
-    public String viewEmpleados(Model model, @ModelAttribute("mensaje") String mensaje){
-        List<Empleado> listaEmpleados=empleadoService.getAllEmpleado();
-        model.addAttribute("emplelist",listaEmpleados);
-        model.addAttribute("mensaje",mensaje);
-        return "verEmpleados"; //Llamamos al HTML
-    }
 
     @GetMapping("/AgregarEmpleado")
     public String nuevoEmpleado(Model model, @ModelAttribute("mensaje") String mensaje){
