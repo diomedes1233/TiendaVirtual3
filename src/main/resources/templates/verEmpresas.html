@@ -29,8 +29,8 @@
 
                 <ul class="nav">
                     <li class="active"><a th:href="@{/VerEmpresas}">Empresas</a></li>
-                    <li><a th:href="@{/VerMovimientos}">Movimientos</a></li>
-                    <li><a th:href="@{/VerEmpleados}">Empleados</a></li>
+                    <li class="active"><a th:href="@{/VerMovimientos}">Movimientos</a></li>
+                    <li class="active"><a th:href="@{/VerEmpleados}">Empleados</a></li>
                 </ul>
 
             </div>
@@ -70,6 +70,8 @@
                     <td><button type="button" class="btn-naranja-editar"><a th:href="@{/EditarEmpresa/{id}(id=${empresa.id})}">Editar</a></button></td>
                     <td><button type="button" class="btn-rojo-eliminar"><a th:href="@{/EliminarEmpresa/{id}(id=${empresa.id})}">Eliminar</a></button></td>
                 </tr>
+
+
             </table>
 
                     <!-- vamos a crear un boton que sirva para agregar nuevas empresas -->
