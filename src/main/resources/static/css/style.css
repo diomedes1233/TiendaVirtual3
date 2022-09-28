@@ -247,6 +247,7 @@ footer{
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
+    margin-left: -40px;
 }
 button.btn-registrar-verde{
     color: #fff;

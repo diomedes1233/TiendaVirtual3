@@ -20,12 +20,20 @@ import java.util.List;
 @Controller
 public class EmpleadoController {
 
-    //EMPLEADOS
+
     @Autowired
     EmpleadoService empleadoService;
     @Autowired
     EmpresaService empresaService;
 
+    //EMPLEADOS
+    @GetMapping ("/VerEmpleados")
+    public String viewEmpleados(Model model, @ModelAttribute("mensaje") String mensaje){
+        List<Empleado> listaEmpleados=empleadoService.getAllEmpleado();
+        model.addAttribute("emplelist",listaEmpleados);
+        model.addAttribute("mensaje",mensaje);
+        return "verEmpleados"; //Llamamos al HTML
+    }
 
     @GetMapping("/AgregarEmpleado")
     public String nuevoEmpleado(Model model, @ModelAttribute("mensaje") String mensaje){
@@ -93,6 +101,7 @@ public class EmpleadoController {
         model.addAttribute("emplelist",listaEmpleados);
         return "verEmpleados"; //Llamamos al html con el emplelist de los empleados filtrados
     }
+
 
     //Controlador que me lleva al template de No autorizado
     @RequestMapping(value="/Denegado")
