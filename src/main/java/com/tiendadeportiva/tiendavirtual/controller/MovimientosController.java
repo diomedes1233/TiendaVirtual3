@@ -2,6 +2,7 @@ package com.tiendadeportiva.tiendavirtual.controller;
 import com.tiendadeportiva.tiendavirtual.modelos.Empleado;
 import com.tiendadeportiva.tiendavirtual.modelos.MovimientoDinero;
 import com.tiendadeportiva.tiendavirtual.repo.MovimientosRepository;
+import com.tiendadeportiva.tiendavirtual.service.EmpleadoService;
 import com.tiendadeportiva.tiendavirtual.service.MovimientosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,9 @@ import java.util.List;
 
 @Controller
 public class MovimientosController {
+
+    @Autowired
+    EmpleadoService empleadoService;
     @Autowired
     MovimientosService movimientosService;
 
@@ -62,7 +66,7 @@ public class MovimientosController {
             return "redirect:/VerMovimientos";
         }
         redirectAttributes.addFlashAttribute("mensaje","saveError");
-        return "redirect:/AgregarMovimiento";
+        return "redirect:/agregarMovimiento";
     }
 
     @GetMapping("/EditarMovimiento/{id}")
@@ -71,8 +75,8 @@ public class MovimientosController {
         //Creamos un atributo para el modelo, que se llame igualmente empl y es el que ira al html para llenar o alimentar campos
         model.addAttribute("mov",mov);
         model.addAttribute("mensaje", mensaje);
-        //List<Empleado> listaEmpleados= empleadoService.getAllEmpleado();
-        //model.addAttribute("emplelist",listaEmpleados);
+        List<Empleado> listaEmpleados= empleadoService.getAllEmpleado();
+        model.addAttribute("emplelist",listaEmpleados);
         return "editarMovimiento";
     }
 
